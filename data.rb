@@ -38,7 +38,7 @@ while $i<sakla1
   print "\n"
   $d=$d+1
  end
- terelelli=[".com",".net",".org",".gov",".edu",".us"]
+ terelelli=["@gmail.com","@hotmail.com"]
  $e=0
  dizi[3]=dizi[3].to_i
  while($e<dizi[3])
