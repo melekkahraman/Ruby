@@ -40,7 +40,7 @@ def pid_random
 end
 $x=0
 while $x<100  #access log
-  print ip_random,"--",date_random,dir_random,"200396","\"-\"","\"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0\""
+  print ip_random,"--",date_random,dir_random,"200396","\"-\"","\"-\""
   print ip_random,"--",date_random,"\"-\"",error_random,"\"-\"","\"-\""
   $x=$x+1
 end
