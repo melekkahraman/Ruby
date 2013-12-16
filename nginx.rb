@@ -1,6 +1,6 @@
 array=Array.new
 line=""
-pot=IO.readlines("oku.txt")
+pot=IO.readlines("request.txt")
 array=pot[1]
 array=line.split(" ")
 def ip_random
