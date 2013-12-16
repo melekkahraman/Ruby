@@ -1,3 +1,8 @@
+array=Array.new
+line=""
+pot=IO.readlines("oku.txt")
+array=pot[1]
+array=line.split(" ")
 def ip_random
   a=rand(1..255)
   b=rand(1..255)
@@ -27,26 +32,22 @@ def error_random
   write=array2[report]
   puts write
 end
-def url_random
-  array=[".com",".net",".org",".gov",".edu",".us","biz","com.tr",".biz.tr",".info.tr",".org.tr",".av.tr",".pol.tr",".bel.tr",".mil.tr",".bbs.tr",".k12.tr",".edu.tr",".name.tr",".net.tr","gov.tr"]
-  o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
-  string = (0...50).map{ o[rand(o.length)] }.join
-  ata=array[rand(21)]
-  puts "www." + string + ata
-end
 def pid_random
   kem=rand(1000..65536)
-  print "PID=",kem
+   print "PID=",kem
 end
 $x=0
-while $x<100  #access log
-  print ip_random,"--",date_random,dir_random,"200396","\"-\"","\"-\""
-  print ip_random,"--",date_random,"\"-\"",error_random,"\"-\"","\"-\""
+while $x<array[0]  #access log
+  File.open('accesslog.rb', 'w') do |f2|
+  f2.print ip_random,"--",date_random,dir_random,"200396","\"-\"","\"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0\""
   $x=$x+1
 end
 $y=0
-while $y<100 #error log
-  print date_random,"(server.c.1546) server stopped by UID = 0",pid_random
-  print date_random,"(log.c.166) server started"
+while $y<array[1] #error log
+  File.open('errorlog.rb', 'w') do |f3|
+  f3.print date_random,"(server.c.1546) server stopped by UID = 0",pid_random
+  File.open('errorlog.rb', 'w') do |f4|
+  f4.print date_random,"(log.c.166) server started"
+
   $y=$y+1
 end
